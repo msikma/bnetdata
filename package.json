@@ -1,0 +1,15 @@
+{
+  "name": "bnetdata-test",
+  "version": "1.0.0",
+  "description": "Proof of concept for getting data from a running StarCraft executable through its internal webserver",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.0.0"
+  }
+}
