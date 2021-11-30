@@ -8,6 +8,8 @@ Proof of concept for getting data from a running StarCraft executable through it
 
 Install dependencies, make sure StarCraft Remastered is running, and then run `index.js`.
 
+Requires a Unix like environment to be present at the moment. Untested on Windows, but I think it should work if the WSL is present.
+
 You should get a table displaying the current ladder top 100.
 
 ## License
