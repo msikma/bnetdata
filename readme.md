@@ -1,6 +1,6 @@
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
-# bnetdata-test
+# bnetdata
 
 Utility for querying Battle.net information through the StarCraft internal program API.
 
