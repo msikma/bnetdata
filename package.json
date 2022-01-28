@@ -1,15 +1,28 @@
 {
-  "name": "bnetdata-test",
-  "version": "1.0.0",
-  "description": "Proof of concept for getting data from a running StarCraft executable through its internal webserver",
+  "name": "bnetdata",
+  "version": "0.1.0",
+  "description": "Utility for querying Battle.net information through the StarCraft internal program API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "bin": {
+    "bnetdata": "index.js"
+  },
+  "keywords": [
+    "StarCraft",
+    "StarCraft: Remastered",
+    "StarCraft: Brood War"
+  ],
   "dependencies": {
-    "node-fetch": "^2.0.0"
+    "argparse": "^2.0.1",
+    "node-fetch": "^2.0.0",
+    "ws": "^8.4.0"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.6",
+    "utf-8-validate": "^5.0.8"
   }
 }

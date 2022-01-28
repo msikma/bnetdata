@@ -1,33 +1,25 @@
 #!/usr/bin/env node
-// StarCraft internal server data example
+
+// StarCraft internal server data scraper
 // © MIT license
 
-const process = require('process')
-const {getProcess, getOpenPorts, findWorkingPort, getLadderTop100} = require('./lib')
+const {ArgumentParser} = require('argparse')
+const {readJSON} = require('./lib/util')
 
-/**
- * Short proof of concept that queries the StarCraft local web server and displays the ladder top 100.
- * 
- * First this searches for the pid of the StarCraft executable.
- * Then it checks to see what ports it's using (they're randomly picked at startup).
- * One of those ports is hosting the server.
- * Finally, it makes a query to the server requesting the ladder top 100, and displays it.
- */
-const main = async () => {
-  const proc = await getProcess()
-  if (!proc) {
-    console.log('bnetdata: error: StarCraft is not running.')
-    process.exit(1)
-  }
+const pkgData = readJSON(`${__dirname}/package.json`)
+const parser = new ArgumentParser({
+  description: `Retrieves data from StarCraft's internal webserver.`,
+  add_help: true
+})
+parser.add_argument('-v', '--version', {action: 'version', version: pkgData.version})
+parser.add_argument('-d', '--debug', {help: 'turns debugging on (logs the API calls being made)', action: 'store_true'})
+parser.add_argument('--get-port', {help: 'prints the port currently used by StarCraft', dest: 'actionGetPort', action: 'store_true'})
+parser.add_argument('--get-process', {help: 'prints the process ID currently used by StarCraft', dest: 'actionGetProcess', action: 'store_true'})
+parser.add_argument('--get-ladder-top100', {help: 'prints the current global ladder top 100', dest: 'actionGetLadderTop100', action: 'store_true'})
+parser.add_argument('--get-player', {help: 'prints player information by Battle.net ID', dest: 'actionGetPlayer', metavar: 'BNET_ID'})
+parser.add_argument('--find-players', {help: 'searches the ladder for a name and returns matching players', dest: 'actionFindPlayers', metavar: 'TERM'})
+parser.add_argument('--host', {help: 'host to use for making API calls (default: 127.0.0.1)', dest: 'valueHost', metavar: 'HOST', default: '127.0.0.1'})
 
-  const ports = await getOpenPorts(proc)
-  const port = await findWorkingPort(ports)
+const args = {...parser.parse_args()}
 
-  const ladderTop100 = await getLadderTop100(port)
-  
-  console.log('StarCraft Remastered Ladder Top 100:')
-  console.table(ladderTop100)
-  process.exit(0)
-}
-
-main()
+require('./main.js').main(args, {cwd: process.cwd()})
