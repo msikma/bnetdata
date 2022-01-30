@@ -26,6 +26,11 @@ node-gyp-build@^4.3.0:
   resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.3.0.tgz#9f256b03e5826150be39c764bf51e993946d71a3"
   integrity sha512-iWjXZvmboq0ja1pUGULQBexmxq8CV4xBhX7VDOTbL7ZR4FOowwY/VOtRxBN/yKxmdGoIp4j5ysNT4u3S2pDQ3Q==
 
+sctoolsdata@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/sctoolsdata/-/sctoolsdata-0.1.0.tgz#ce93b86489da3405704fa52c4094199f46eca654"
+  integrity sha512-NOOdkazWJe/FBrifX4RSsTJ+oDzX9p+qcEaiHw5192S/dpvwOJHDzfkbhOolfl5pCrHAZGaPzsxgLmQOz18auA==
+
 tr46@~0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"

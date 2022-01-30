@@ -16,7 +16,7 @@ parser.add_argument('-d', '--debug', {help: 'turns debugging on (logs the API ca
 parser.add_argument('--get-port', {help: 'prints the port currently used by StarCraft', dest: 'actionGetPort', action: 'store_true'})
 parser.add_argument('--get-process', {help: 'prints the process ID currently used by StarCraft', dest: 'actionGetProcess', action: 'store_true'})
 parser.add_argument('--get-ladder-top100', {help: 'prints the current global ladder top 100', dest: 'actionGetLadderTop100', action: 'store_true'})
-parser.add_argument('--get-player', {help: 'prints player information by Battle.net ID', dest: 'actionGetPlayer', metavar: 'BNET_ID'})
+parser.add_argument('--get-player', {help: 'prints player information by Battle.net ID', dest: 'actionGetPlayer', metavar: 'ID'})
 parser.add_argument('--find-players', {help: 'searches the ladder for a name and returns matching players', dest: 'actionFindPlayers', metavar: 'TERM'})
 parser.add_argument('--host', {help: 'host to use for making API calls (default: 127.0.0.1)', dest: 'valueHost', metavar: 'HOST', default: '127.0.0.1'})
 
