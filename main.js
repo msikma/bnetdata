@@ -14,9 +14,9 @@ const {BnetAPI, getProcessInfo, outputSuccess, outputError, outputResult} = requ
 const main = async (args) => {
   // Find the process ID and open port.
   const [proc, port] = await getProcessInfo(args.actionGetProcess)
-  
+
   if (!proc) {
-    return outputError('bnetdata: error: StarCraft is not running.')
+    return outputError('bnetdata: error: StarCraft is not running.', 18)
   }
 
   if (args.actionGetProcess) {
