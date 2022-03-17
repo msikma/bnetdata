@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "engines": {
-    "node" : ">=15"
+    "node": ">=15"
   },
   "bin": {
     "bnetdata": "index.js"
