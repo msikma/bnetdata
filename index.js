@@ -3,6 +3,12 @@
 // StarCraft internal server data scraper
 // © MIT license
 
+
+process.on('unhandledRejection', error => {
+  // Will print "unhandledRejection err is not defined"
+  console.log('unhandledRejection', error);
+});
+
 const {ArgumentParser} = require('argparse')
 const {readJSON} = require('./lib/util')
 
